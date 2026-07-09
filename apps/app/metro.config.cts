@@ -4,4 +4,4 @@ import { withNativewind } from "nativewind/metro";
 
 const config: MetroConfig = getDefaultConfig(__dirname);
 
-export default withNativewind(config as any, {});
+export default withNativewind(config as any, { inlineRem: 16 });
