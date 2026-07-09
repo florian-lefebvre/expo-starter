@@ -2,4 +2,5 @@ packages:
   - apps/*
   - packages/*
 allowBuilds:
+  dtrace-provider: false
   unrs-resolver: false
