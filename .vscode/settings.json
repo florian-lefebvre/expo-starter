@@ -15,5 +15,5 @@
 	"[json]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"tailwindCSS.classAttributes": ["class", "className", "headerClassName"]
+	"tailwindCSS.classAttributes": ["class", "className"],
 }
