@@ -3,4 +3,9 @@ packages:
   - packages/*
 allowBuilds:
   dtrace-provider: false
+  esbuild: false
+  sharp: false
   unrs-resolver: false
+  workerd: false
+minimumReleaseAgeExclude:
+  - expo-network@57.0.1

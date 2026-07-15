@@ -1,5 +1,5 @@
 {
-	"name": "app",
+	"name": "@repo/app",
 	"main": "index.ts",
 	"type": "module",
 	"version": "1.0.0",
@@ -9,6 +9,12 @@
 		"@gluestack-ui/core": "^5.0.15",
 		"@gluestack-ui/utils": "^5.0.6",
 		"@legendapp/motion": "^2.5.3",
+		"@orpc/client": "^2.0.0-beta.17",
+		"@orpc/contract": "^2.0.0-beta.17",
+		"@orpc/openapi": "^2.0.0-beta.17",
+		"@orpc/tanstack-query": "^2.0.0-beta.17",
+		"@repo/router-contract": "workspace:*",
+		"@tanstack/react-query": "^5.101.2",
 		"expo": "~57.0.4",
 		"expo-constants": "~57.0.3",
 		"expo-dev-client": "~57.0.5",
@@ -17,6 +23,7 @@
 		"expo-glass-effect": "~57.0.0",
 		"expo-image": "~57.0.0",
 		"expo-linking": "~57.0.2",
+		"expo-network": "~57.0.1",
 		"expo-router": "~57.0.4",
 		"expo-splash-screen": "~57.0.2",
 		"expo-status-bar": "~57.0.0",
@@ -39,6 +46,7 @@
 		"uniwind": "^1.10.0"
 	},
 	"devDependencies": {
+		"@tanstack/eslint-plugin-query": "^5.101.2",
 		"@types/node": "^26.1.1",
 		"@types/react": "~19.2.2",
 		"eas-cli": "^20.5.1",
@@ -53,7 +61,8 @@
 		"android": "expo run:android",
 		"ios": "expo run:ios",
 		"web": "expo start --web",
-		"lint": "expo lint"
+		"lint": "expo lint",
+		"build": "tsc && expo export -p web"
 	},
 	"private": true
 }
