@@ -1,3 +1,5 @@
-import { createAsyncStorage } from "@react-native-async-storage/async-storage";
+import { createMMKV } from "react-native-mmkv";
 
-export const asyncStorage = createAsyncStorage("main");
+export const STORAGE_ID = "main";
+
+export const storage = createMMKV({ id: STORAGE_ID, });
