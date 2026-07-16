@@ -9,9 +9,11 @@ import React from "react";
 import { AppState, Platform } from "react-native";
 import { useCSSVariable } from "uniwind";
 import { queryClient } from "@/lib/query";
+import { useRestoredThemePreference } from "@/lib/theme-preference";
 import "../styles/global.css";
 
 export default function RootLayout() {
+	const themeRestored = useRestoredThemePreference();
 	const background = useCSSVariable("--color-background")?.toString();
 	const foreground = useCSSVariable("--color-foreground")?.toString();
 	const muted = useCSSVariable("--color-muted")?.toString();
@@ -46,6 +48,10 @@ export default function RootLayout() {
 
 		return () => subscription.remove();
 	}, []);
+
+	if (!themeRestored) {
+		return null;
+	}
 
 	return (
 		<QueryClientProvider client={queryClient}>

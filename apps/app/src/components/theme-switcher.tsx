@@ -1,5 +1,6 @@
 import { Text } from "react-native";
-import { Uniwind, useUniwind } from "uniwind";
+import { useUniwind } from "uniwind";
+import { setThemePreference } from "@/lib/theme-preference";
 import { Button, ButtonIcon } from "./ui/button";
 
 export function ThemeSwitcher() {
@@ -18,7 +19,9 @@ export function ThemeSwitcher() {
 		<Button
 			variant="outline"
 			size="icon"
-			onPress={() => Uniwind.setTheme(themes[(index + 1) % themes.length].name)}
+			onPress={() =>
+				setThemePreference(themes[(index + 1) % themes.length].name)
+			}
 		>
 			<ButtonIcon as={(_props) => <Text>{themes[index].icon}</Text>} />
 		</Button>
