@@ -1,6 +1,6 @@
-import { THEME_LOCAL_STORAGE_KEY } from "@/lib/theme-preference-storage";
 import { ScrollViewStyleReset } from "expo-router/html";
 import type { PropsWithChildren } from "react";
+import { THEME_LOCAL_STORAGE_KEY } from "@/lib/theme-preference-storage";
 
 // Runs before the browser paints, so a stored preference that disagrees with the
 // system theme never flashes. Uniwind resolves themes from a class on <html> and

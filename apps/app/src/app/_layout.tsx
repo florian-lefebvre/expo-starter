@@ -9,8 +9,10 @@ import React from "react";
 import { AppState, Platform } from "react-native";
 import { useCSSVariable } from "uniwind";
 import { queryClient } from "@/lib/query";
-import "@/lib/theme-preference";
+import { restoreTheme } from "@/lib/theme-preference";
 import "../styles/global.css";
+
+restoreTheme();
 
 export default function RootLayout() {
 	const background = useCSSVariable("--color-background")?.toString();

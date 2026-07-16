@@ -23,12 +23,10 @@ export function setThemePreference(preference: ThemePreference) {
 	storage.set(THEME_STORAGE_KEY, preference);
 }
 
-// Applied while this module is evaluated rather than from an effect, so the
-// preference is in place before the tree first renders. On web this also has to
-// beat `uniwind`, which puts the *system* theme class on `<html>` as soon as it
-// is imported and would otherwise undo the class `+html.tsx` just set.
-const stored = readStoredPreference();
+export function restoreTheme() {
+	const stored = readStoredPreference();
 
-if (stored && isThemePreference(stored)) {
-	Uniwind.setTheme(stored);
+	if (stored && isThemePreference(stored)) {
+		Uniwind.setTheme(stored);
+	}
 }
