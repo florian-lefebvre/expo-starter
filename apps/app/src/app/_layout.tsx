@@ -14,10 +14,15 @@ import "../styles/global.css";
 
 restoreTheme();
 
+const useRealCSSVariable: (name: string) => string | undefined =
+	Platform.OS === "web"
+		? (name) => `var(${name})`
+		: (name) => useCSSVariable(name)?.toString();
+
 export default function RootLayout() {
-	const background = useCSSVariable("--color-background")?.toString();
-	const foreground = useCSSVariable("--color-foreground")?.toString();
-	const muted = useCSSVariable("--color-muted")?.toString();
+	const background = useRealCSSVariable("--color-background")?.toString();
+	const foreground = useRealCSSVariable("--color-foreground")?.toString();
+	const muted = useRealCSSVariable("--color-muted")?.toString();
 
 	React.useEffect(() => {
 		if (Platform.OS === "web") return;
@@ -50,6 +55,7 @@ export default function RootLayout() {
 		return () => subscription.remove();
 	}, []);
 
+	// TODO: check how to set the header bottom border color
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Stack
